@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Romagnoli – CV</title>
+    <meta name="description" content="CV / Resume – Luca Romagnoli">
+    <meta property="og:title" content="Luca Romagnoli – CV">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <!-- Set theme before render to prevent flash -->
+    <script>
+        (function() {
+            var saved = localStorage.getItem('theme');
+            if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── Light theme (default) ── */
+        .cv-body h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin: 0 0 0.25rem 0;
+            color: #0f172a;
+        }
+        .cv-body h1 + p {
+            font-size: 1.05rem;
+            color: #475569;
+            margin: 0 0 1.5rem 0;
+            font-weight: 400;
+        }
+        .cv-body h2 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #6366f1;
+            margin: 2rem 0 0.75rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e0e7ff;
+        }
+        .cv-body h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.25rem 0;
+            color: #1e293b;
+        }
+        .cv-body p {
+            margin: 0.3rem 0;
+            color: #334155;
+        }
+        .cv-body p strong {
+            color: #1e293b;
+            font-weight: 600;
+        }
+        .cv-body ul {
+            margin: 0.4rem 0;
+            padding-left: 1.25rem;
+        }
+        .cv-body li {
+            margin: 0.2rem 0;
+            color: #334155;
+        }
+        .cv-body li::marker {
+            color: #a5b4fc;
+        }
+        .cv-body a {
+            color: #4f46e5;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+        .cv-body a:hover {
+            border-bottom-color: #4f46e5;
+        }
+
+        /* ── Dark theme ── */
+        .dark .cv-body h1 {
+            color: #f1f5f9;
+        }
+        .dark .cv-body h1 + p {
+            color: #94a3b8;
+        }
+        .dark .cv-body h2 {
+            color: #818cf8;
+            border-bottom-color: #312e81;
+        }
+        .dark .cv-body h3 {
+            color: #e2e8f0;
+        }
+        .dark .cv-body p {
+            color: #cbd5e1;
+        }
+        .dark .cv-body p strong {
+            color: #e2e8f0;
+        }
+        .dark .cv-body li {
+            color: #cbd5e1;
+        }
+        .dark .cv-body li::marker {
+            color: #6366f1;
+        }
+        .dark .cv-body a {
+            color: #a5b4fc;
+        }
+        .dark .cv-body a:hover {
+            border-bottom-color: #a5b4fc;
+        }
+
+        /* ── Print ── */
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            main { box-shadow: none !important; border: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 font-sans text-base leading-relaxed antialiased min-h-screen transition-colors duration-200">
+
+    <!-- Top bar -->
+    <header class="no-print sticky top-0 z-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-700">
+        <div class="max-w-3xl mx-auto px-6 py-3 flex items-center justify-between">
+            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300 tracking-tight">Luca Romagnoli</span>
+            <div class="flex items-center gap-3">
+                <nav class="flex gap-2">
+                    <a href="cv.pdf" download
+                       class="inline-flex items-center gap-1.5 px-4 py-1.5 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        PDF
+                    </a>
+                    <a href="cv.docx" download
+                       class="inline-flex items-center gap-1.5 px-4 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        DOCX
+                    </a>
+                </nav>
+                <!-- Theme toggle -->
+                <button id="theme-toggle" type="button"
+                        class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+                        aria-label="Toggle theme">
+                    <!-- Sun icon (shown in dark mode) -->
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                    </svg>
+                    <!-- Moon icon (shown in light mode) -->
+                    <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CV content -->
+    <main class="max-w-3xl mx-auto my-8 px-8 py-10 bg-white dark:bg-slate-800/50 rounded-xl shadow-sm border border-slate-200/60 dark:border-slate-700/60 transition-colors duration-200">
+        <article class="cv-body">
+            {{ body | safe }}
+        </article>
+    </main>
+
+    <footer class="no-print text-center text-xs text-slate-400 dark:text-slate-600 pb-6">
+        Built from Markdown
+    </footer>
+
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            var html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

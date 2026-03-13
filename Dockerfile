@@ -1,35 +1,32 @@
-FROM python:3.10-slim-buster as build
+FROM python:3.12-slim
 
-# env vars
-ENV PIP_DISABLE_PIP_VERSION_CHECK 1
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+# Install Pandoc and TeX Live (minimal + extras needed for CV)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    pandoc \
+    texlive-xetex \
+    texlive-fonts-recommended \
+    texlive-fonts-extra \
+    texlive-latex-extra \
+    fontconfig \
+    wget \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
 
-# build libs
-RUN apt update && apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib -y
+# Install Inter font (static TTFs for full XeLaTeX compatibility)
+RUN wget -q https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip -O /tmp/inter.zip \
+    && mkdir -p /usr/share/fonts/truetype/inter \
+    && unzip -q /tmp/inter.zip -d /tmp/inter \
+    && cp /tmp/inter/extras/ttf/*.ttf /usr/share/fonts/truetype/inter/ \
+    && fc-cache -f \
+    && rm -rf /tmp/inter /tmp/inter.zip
 
-# app deps
-WORKDIR /code
-COPY ./requirements.txt /code
-RUN pip install --upgrade pip && pip install -r requirements.txt --no-cache-dir
-COPY app/ /code/app
-COPY project/ /code/project
-COPY templates/ /code/templates
-COPY manage.py /code
+WORKDIR /app
 
-FROM build as test
-#COPY tests /code/tests
-COPY requirements-dev.txt /code
-COPY tox.ini /code
-COPY pyproject.toml /code
-RUN pip install --upgrade pip && pip install -r requirements-dev.txt --no-cache-dir
+# Copy project files
+COPY . .
 
-FROM python:3.10-slim-buster as release
-WORKDIR /code
-COPY --from=build /code/ /code/
-COPY --from=build /usr/local/lib/python3.10/site-packages/ /usr/local/lib/python3.10/site-packages/
-COPY --from=build /usr/local/bin/ /usr/local/bin/
-COPY entry_point.sh .
-RUN chmod +x ./entry_point.sh
-ENTRYPOINT ["/bin/sh"]
-CMD ["entry_point.sh"]
+# Install Python dependencies
+RUN pip install --no-cache-dir jinja2
+
+ENTRYPOINT ["python", "cv/build.py"]
+CMD ["--all"]

@@ -3,30 +3,19 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "resume"
-version = "0"
+name = "cv-resume"
+version = "0.1.0"
+description = "Markdown-as-source-of-truth CV publishing pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
 dependencies = [
-    "dj_database_url==1.2.0",
-    "django-bootstrap-icons==0.8.2",
-    "django-bootstrap5==22.2",
-    "django-rest-framework==0.1.0",
-    "django==4.1.5",
-    "gunicorn==20.1.0",
-    "psycopg2-binary==2.9.5",
-    "python-dotenv==0.21.1",
-    "whitenoise==6.3.0",
-    "xhtml2pdf==0.2.9",
-    "django-active-link==0.1.8",
-    "django-cors-headers==3.13.0",
+    "jinja2>=3.1",
 ]
 
 [project.optional-dependencies]
 dev = [
     "black",
-    "flake8",
+    "ruff",
     "mypy",
-    "pip-tools",
-    "pytest",
-    "pytest-django",
+    "pre-commit",
 ]
-
