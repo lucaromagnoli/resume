@@ -8,9 +8,20 @@ repos:
       - id: check-json
       - id: check-added-large-files
       - id: detect-private-key
-  - repo: https://github.com/psf/black
-    rev: 24.10.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.10
     hooks:
-      - id: black
-        language_version: python3
+      - id: ruff
+        args: [--fix]
         files: ^cv/.*\.py$
+      - id: ruff-format
+        files: ^cv/.*\.py$
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.6.9
+    hooks:
+      - id: uv-lock
+  - repo: https://github.com/doublify/pre-commit-rust
+    rev: v1.0
+    hooks:
+      - id: fmt
+      - id: clippy

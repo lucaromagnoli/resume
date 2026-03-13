@@ -1,4 +1,4 @@
-name: Build CV
+name: Build & Deploy CV
 
 on:
   push:
@@ -6,10 +6,18 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -17,11 +25,28 @@ jobs:
         run: docker build -t cv-builder .
 
       - name: Generate CV artifacts
-        run: |
-          docker run --rm -v ${{ github.workspace }}/dist:/app/dist cv-builder --all
+        run: docker run --rm -v ${{ github.workspace }}/dist:/app/dist cv-builder --all
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: cv-artifacts
           path: dist/
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -11,7 +11,6 @@ from __future__ import annotations
 import argparse
 import shutil
 import subprocess
-import sys
 from pathlib import Path
 
 # Paths
@@ -138,6 +137,16 @@ def build_docx(md_path: Path) -> None:
     print(f"Generated {out_path}")
 
 
+def copy_cname() -> None:
+    cname = CV_DIR / "CNAME"
+    if not cname.exists():
+        return
+    DIST_DIR.mkdir(parents=True, exist_ok=True)
+    dst = DIST_DIR / "CNAME"
+    shutil.copy2(cname, dst)
+    print(f"Copied {dst}")
+
+
 def copy_assets() -> None:
     if not ASSETS_DIR.is_dir():
         return
@@ -203,11 +212,13 @@ def main() -> None:
         build_docx(CV_MD)
         copy_styles()
         copy_assets()
+        copy_cname()
     else:
         if args.html:
             build_html(CV_MD)
             copy_styles()
             copy_assets()
+            copy_cname()
         if args.pdf:
             build_pdf(CV_MD)
         if args.docx:
