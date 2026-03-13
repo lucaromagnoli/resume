@@ -150,3 +150,9 @@ Go implementation and support for Grammar School DSLs.
 
 Final Year Project: Machine-learning fashion search engine using TensorFlow and Annoy.
 [github.com/lucaromagnoli/open-uni-final-project](https://github.com/lucaromagnoli/open-uni-final-project)
+
+## Interests
+
+### Electronic Music Production
+
+Producing electronic music and building tools to bridge AI and digital audio workstations.
