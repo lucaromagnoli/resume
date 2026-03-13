@@ -13,6 +13,7 @@ import os
 import re
 import shutil
 import subprocess
+from datetime import date
 from pathlib import Path
 
 # Paths
@@ -130,7 +131,12 @@ def build_html(md_text: str) -> None:
     body_html = md_to_html_body(public_md)
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     template = env.get_template("cv.html.j2")
-    html = template.render(body=body_html)
+    today = date.today()
+    html = template.render(
+        body=body_html,
+        pdf_file=f"Luca_Romagnoli_resume_{today}.pdf",
+        docx_file=f"Luca_Romagnoli_resume_{today}.docx",
+    )
 
     DIST_DIR.mkdir(parents=True, exist_ok=True)
     out_path = DIST_DIR / "index.html"
@@ -144,7 +150,7 @@ def build_pdf(md_text: str) -> None:
         raise FileNotFoundError(f"LaTeX template not found: {tex_template}")
 
     DIST_DIR.mkdir(parents=True, exist_ok=True)
-    out_path = DIST_DIR / "cv.pdf"
+    out_path = DIST_DIR / f"Luca_Romagnoli_resume_{date.today()}.pdf"
 
     _run_pandoc_stdin(
         md_text,
@@ -160,7 +166,7 @@ def build_pdf(md_text: str) -> None:
 
 def build_docx(md_text: str) -> None:
     DIST_DIR.mkdir(parents=True, exist_ok=True)
-    out_path = DIST_DIR / "cv.docx"
+    out_path = DIST_DIR / f"Luca_Romagnoli_resume_{date.today()}.docx"
 
     _run_pandoc_stdin(md_text, ["-o", str(out_path)])
     print(f"Generated {out_path}")
