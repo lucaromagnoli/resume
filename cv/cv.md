@@ -127,14 +127,17 @@ AI-driven system translating natural language into DAW commands using a multi-ag
 ### grammar-school
 
 A multi-language framework for building tiny, LLM-friendly domain-specific languages (DSLs).
+[github.com/Conceptual-Machines/grammar-school](https://github.com/Conceptual-Machines/grammar-school)
 
 ### grammar-school-python
 
 Python implementation and support for Grammar School DSL concepts.
+[github.com/Conceptual-Machines/grammar-school-python](https://github.com/Conceptual-Machines/grammar-school-python)
 
 ### grammar-school-go
 
 Go implementation and support for Grammar School DSLs.
+[github.com/Conceptual-Machines/grammar-school-go](https://github.com/Conceptual-Machines/grammar-school-go)
 
 ### DataService -- Scalable data gathering library for Python
 
