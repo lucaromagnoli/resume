@@ -9,6 +9,8 @@ Requires: Python 3.x, Pandoc, TeX (xelatex).
 from __future__ import annotations
 
 import argparse
+import os
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -61,18 +63,44 @@ def check_latex() -> None:
     )
 
 
-def md_to_html_body(md_path: Path) -> str:
-    """Convert Markdown to HTML fragment (body only, no document wrapper)."""
+PRIVATE_PATTERNS = ["Email:", "Phone:"]
+
+
+def _resolve_env_vars(md_text: str) -> str:
+    """Replace ${VAR} placeholders with environment variable values."""
+
+    def _replace(match: re.Match) -> str:
+        return os.environ.get(match.group(1), match.group(0))
+
+    return re.sub(r"\$\{(\w+)}", _replace, md_text)
+
+
+def _read_md(md_path: Path) -> str:
+    """Read markdown and resolve env var placeholders."""
+    return _resolve_env_vars(md_path.read_text(encoding="utf-8"))
+
+
+def _strip_private_lines(md_text: str) -> str:
+    """Remove lines containing private contact info for the public HTML build."""
+    return "\n".join(
+        line
+        for line in md_text.splitlines()
+        if not any(p in line for p in PRIVATE_PATTERNS)
+    )
+
+
+def md_to_html_body(md_text: str) -> str:
+    """Convert Markdown string to HTML fragment (body only, no document wrapper)."""
     result = subprocess.run(
         [
             "pandoc",
-            str(md_path),
             "-f",
             "markdown",
             "-t",
             "html",
             "--wrap=none",
         ],
+        input=md_text,
         capture_output=True,
         text=True,
         check=True,
@@ -80,7 +108,17 @@ def md_to_html_body(md_path: Path) -> str:
     return result.stdout
 
 
-def build_html(md_path: Path) -> None:
+def _run_pandoc_stdin(md_text: str, args: list[str]) -> None:
+    """Run pandoc with markdown fed via stdin."""
+    cmd = ["pandoc", "-f", "markdown", *args]
+    result = subprocess.run(cmd, input=md_text, capture_output=True, text=True)
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"Command failed: {' '.join(cmd)}\n{result.stderr or result.stdout}"
+        )
+
+
+def build_html(md_text: str) -> None:
     try:
         from jinja2 import Environment, FileSystemLoader
     except ImportError:
@@ -88,7 +126,8 @@ def build_html(md_path: Path) -> None:
             "Jinja2 is required for HTML generation. Install: pip install jinja2"
         )
 
-    body_html = md_to_html_body(md_path)
+    public_md = _strip_private_lines(md_text)
+    body_html = md_to_html_body(public_md)
     env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)))
     template = env.get_template("cv.html.j2")
     html = template.render(body=body_html)
@@ -99,7 +138,7 @@ def build_html(md_path: Path) -> None:
     print(f"Generated {out_path}")
 
 
-def build_pdf(md_path: Path) -> None:
+def build_pdf(md_text: str) -> None:
     tex_template = TEMPLATES_DIR / "cv.tex"
     if not tex_template.exists():
         raise FileNotFoundError(f"LaTeX template not found: {tex_template}")
@@ -107,33 +146,23 @@ def build_pdf(md_path: Path) -> None:
     DIST_DIR.mkdir(parents=True, exist_ok=True)
     out_path = DIST_DIR / "cv.pdf"
 
-    cmd = [
-        "pandoc",
-        str(md_path),
-        "-f",
-        "markdown",
-        "-o",
-        str(out_path),
-        f"--template={tex_template}",
-        "--pdf-engine=xelatex",
-    ]
-    _run(cmd)
+    _run_pandoc_stdin(
+        md_text,
+        [
+            "-o",
+            str(out_path),
+            f"--template={tex_template}",
+            "--pdf-engine=xelatex",
+        ],
+    )
     print(f"Generated {out_path}")
 
 
-def build_docx(md_path: Path) -> None:
+def build_docx(md_text: str) -> None:
     DIST_DIR.mkdir(parents=True, exist_ok=True)
     out_path = DIST_DIR / "cv.docx"
 
-    cmd = [
-        "pandoc",
-        str(md_path),
-        "-f",
-        "markdown",
-        "-o",
-        str(out_path),
-    ]
-    _run(cmd)
+    _run_pandoc_stdin(md_text, ["-o", str(out_path)])
     print(f"Generated {out_path}")
 
 
@@ -206,23 +235,25 @@ def main() -> None:
     if not CV_MD.exists():
         raise SystemExit(f"Source file not found: {CV_MD}")
 
+    md_text = _read_md(CV_MD)
+
     if do_all:
-        build_html(CV_MD)
-        build_pdf(CV_MD)
-        build_docx(CV_MD)
+        build_html(md_text)
+        build_pdf(md_text)
+        build_docx(md_text)
         copy_styles()
         copy_assets()
         copy_cname()
     else:
         if args.html:
-            build_html(CV_MD)
+            build_html(md_text)
             copy_styles()
             copy_assets()
             copy_cname()
         if args.pdf:
-            build_pdf(CV_MD)
+            build_pdf(md_text)
         if args.docx:
-            build_docx(CV_MD)
+            build_docx(md_text)
 
 
 if __name__ == "__main__":
