@@ -1,0 +1,23 @@
+$-- This is a Pandoc LaTeX template for CV output.
+$-- Variables: $body$, optionally $title$, $author$, $date$
+$--\documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$]{article}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=0.75in, top=0.6in, bottom=0.6in}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{enumitem}
+\setlist{nosep, leftmargin=*}
+\hypersetup{colorlinks=true, urlcolor=blue, pdfborder={0 0 0}}
+
+$if(fontsize)$
+$else$
+\usepackage{lmodern}
+$endif$
+
+\begin{document}
+$body$
+\end{document}

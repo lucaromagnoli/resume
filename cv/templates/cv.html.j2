@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Romagnoli – CV</title>
+    <meta name="description" content="CV / Resume – Luca Romagnoli">
+    <meta property="og:title" content="Luca Romagnoli – CV">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="cv.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <nav class="actions">
+                <a href="cv.pdf" class="btn btn-primary" download>Download PDF</a>
+                <a href="cv.docx" class="btn btn-secondary" download>Download DOCX</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <article class="cv-body">
+            {{ body | safe }}
+        </article>
+    </main>
+</body>
+</html>
