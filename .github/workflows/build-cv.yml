@@ -37,7 +37,12 @@ jobs:
         run: docker build -t cv-builder .
 
       - name: Generate CV artifacts
-        run: docker run --rm -v ${{ github.workspace }}/dist:/app/dist cv-builder --all
+        run: |
+          docker run --rm \
+            -e CV_EMAIL="${{ secrets.CV_EMAIL }}" \
+            -e CV_PHONE="${{ secrets.CV_PHONE }}" \
+            -v ${{ github.workspace }}/dist:/app/dist \
+            cv-builder --all
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4

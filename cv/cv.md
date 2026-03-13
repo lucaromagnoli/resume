@@ -5,8 +5,8 @@ Senior Software Engineer -- AI Systems, Distributed Backend, LLM Infrastructure
 ## Contact
 
 - Location: London, UK
-- Email: romagnoli.luca@gmail.com
-- Phone: +44 (0)75 0362 7335
+- Email: ${CV_EMAIL}
+- Phone: ${CV_PHONE}
 - GitHub: [github.com/lucaromagnoli](https://github.com/lucaromagnoli)
 - LinkedIn: [linkedin.com/in/lucaromagnoli79](https://www.linkedin.com/in/lucaromagnoli79/)
 
