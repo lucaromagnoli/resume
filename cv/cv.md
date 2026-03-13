@@ -8,6 +8,7 @@ Senior Software Engineer -- AI Systems, Distributed Backend, LLM Infrastructure
 - Email: romagnoli.luca@gmail.com
 - Phone: +44 (0)75 0362 7335
 - GitHub: [github.com/lucaromagnoli](https://github.com/lucaromagnoli)
+- LinkedIn: [linkedin.com/in/lucaromagnoli79](https://www.linkedin.com/in/lucaromagnoli79/)
 
 ## Summary
 

@@ -61,18 +61,31 @@ def check_latex() -> None:
     )
 
 
+PRIVATE_PATTERNS = ["Email:", "Phone:"]
+
+
+def _strip_private_lines(md_text: str) -> str:
+    """Remove lines containing private contact info for the public HTML build."""
+    return "\n".join(
+        line
+        for line in md_text.splitlines()
+        if not any(p in line for p in PRIVATE_PATTERNS)
+    )
+
+
 def md_to_html_body(md_path: Path) -> str:
     """Convert Markdown to HTML fragment (body only, no document wrapper)."""
+    md_text = _strip_private_lines(md_path.read_text(encoding="utf-8"))
     result = subprocess.run(
         [
             "pandoc",
-            str(md_path),
             "-f",
             "markdown",
             "-t",
             "html",
             "--wrap=none",
         ],
+        input=md_text,
         capture_output=True,
         text=True,
         check=True,
