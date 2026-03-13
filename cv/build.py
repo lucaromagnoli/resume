@@ -72,7 +72,7 @@ def md_to_html_body(md_path: Path) -> str:
             "markdown",
             "-t",
             "html",
-            "--no-wrap",
+            "--wrap=none",
         ],
         capture_output=True,
         text=True,

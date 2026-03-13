@@ -1,23 +1,73 @@
-$-- This is a Pandoc LaTeX template for CV output.
-$-- Variables: $body$, optionally $title$, $author$, $date$
-$--\documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$]{article}
-\documentclass[11pt]{article}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{geometry}
-\geometry{margin=0.75in, top=0.6in, bottom=0.6in}
-\usepackage{parskip}
-\usepackage{hyperref}
-\usepackage{url}
-\usepackage{enumitem}
-\setlist{nosep, leftmargin=*}
-\hypersetup{colorlinks=true, urlcolor=blue, pdfborder={0 0 0}}
+$-- Pandoc LaTeX template for CV output
+\documentclass[11pt, a4paper]{article}
 
-$if(fontsize)$
-$else$
-\usepackage{lmodern}
-$endif$
+% Fonts — Inter for everything, matching the HTML page
+\usepackage{fontspec}
+\setmainfont{Inter}[
+  Path = /usr/share/fonts/truetype/inter/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+]
+\setsansfont{Inter}[
+  Path = /usr/share/fonts/truetype/inter/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+]
+
+% Layout
+\usepackage{geometry}
+\geometry{margin=0.7in, top=0.6in, bottom=0.6in}
+\usepackage[parfill]{parskip}
+\setlength{\parskip}{0.3em}
+\pagestyle{empty}
+
+% Colours
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{4338CA}
+\definecolor{heading}{HTML}{0F172A}
+\definecolor{subtle}{HTML}{475569}
+\usepackage{textcase}
+
+% Links
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent, pdfborder={0 0 0}}
+
+% Lists
+\usepackage{enumitem}
+\setlist{nosep, leftmargin=1.2em, itemsep=1pt}
+
+% Section styling
+\usepackage{titlesec}
+
+% h1 — Name
+\titleformat{\section}
+  {\fontsize{22}{26}\bfseries\color{heading}}
+  {}{0em}{}
+\titlespacing*{\section}{0pt}{0pt}{2pt}
+
+% h2 — Section headings (EXPERIENCE, SKILLS, etc.)
+\titleformat{\subsection}
+  {\fontsize{9}{12}\bfseries\sffamily\color{accent}}
+  {}{0em}{\MakeTextUppercase}
+  [\vspace{-4pt}{\color{accent!30}\rule{\linewidth}{1.2pt}}]
+\titlespacing*{\subsection}{0pt}{16pt}{6pt}
+
+% h3 — Company / project names
+\titleformat{\subsubsection}
+  {\fontsize{11.5}{14}\bfseries\color{heading}}
+  {}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{8pt}{2pt}
+
+% Pandoc uses \tightlist in generated LaTeX
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \begin{document}
+\color{heading}
 $body$
 \end{document}

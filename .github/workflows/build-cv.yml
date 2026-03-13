@@ -1,0 +1,27 @@
+name: Build CV
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t cv-builder .
+
+      - name: Generate CV artifacts
+        run: |
+          docker run --rm -v ${{ github.workspace }}/dist:/app/dist cv-builder --all
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-artifacts
+          path: dist/
