@@ -145,5 +145,7 @@ Go implementation and support for Grammar School DSLs.
 
 ## Education
 
-**Open University** -- Final Year Project
-Machine-learning fashion search engine using TensorFlow and Annoy.
+**BSc Computer Science** -- Open University
+
+Final Year Project: Machine-learning fashion search engine using TensorFlow and Annoy.
+[github.com/lucaromagnoli/open-uni-final-project](https://github.com/lucaromagnoli/open-uni-final-project)
