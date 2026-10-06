@@ -9,6 +9,7 @@ Senior Software Engineer -- Distributed Backend Systems, Agentic AI, Polyglot (P
 - Phone: ${CV_PHONE}
 - GitHub: [github.com/lucaromagnoli](https://github.com/lucaromagnoli)
 - LinkedIn: [linkedin.com/in/lucaromagnoli79](https://www.linkedin.com/in/lucaromagnoli79/)
+- Website: [conceptualmachines.co.uk](https://conceptualmachines.co.uk)
 
 ## Summary
 
