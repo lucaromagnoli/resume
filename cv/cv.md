@@ -13,11 +13,11 @@ Senior Software Engineer -- Distributed Backend Systems, Agentic AI, Polyglot (P
 
 ## Summary
 
-Senior software engineer with over ten years of experience building backend and distributed systems. Works mainly in Python, Go and TypeScript, with production experience in Ruby, JavaScript and React and substantial C++ in open-source work. Has carried out several system migrations: a high-throughput Rails service to Go at Deliveroo, a monolith to microservices at Sainsbury's, and legacy services to event-driven AWS Lambda at Siemens. Has also built Kafka-based asynchronous pipelines. Currently builds production AI-agent infrastructure (multi-agent orchestration, A2A, MCP) at NearForm. Creator of MAGDA, an open-source, cross-platform digital audio workstation (DAW) with built-in AI agents. It spans a C++ desktop application and audio engine, a React/Next.js web front end, and AWS infrastructure managed with Terraform.
+Senior software engineer with over ten years of experience building backend and distributed systems. Works mainly in Python, Go and TypeScript/JavaScript (including React), with production experience in Ruby and substantial C++ in open-source work. Has carried out several system migrations: a high-throughput Rails service to Go at Deliveroo, a monolith to microservices at Sainsbury's, and legacy services to event-driven AWS Lambda at Siemens. Has also built Kafka-based asynchronous pipelines. Currently builds production AI-agent infrastructure (multi-agent orchestration, A2A, MCP) at NearForm. Creator of MAGDA, an open-source, cross-platform digital audio workstation (DAW) with built-in AI agents. It spans a C++ desktop application and audio engine, a React/Next.js web front end, and AWS infrastructure managed with Terraform.
 
 ## Technical Skills
 
-- **Languages:** Python, Go, TypeScript (primary); C++20/23, Ruby, JavaScript, Java, SQL, Bash
+- **Languages:** Python, Go, TypeScript/JavaScript (primary); C++20/23, Ruby, Java, SQL, Bash
 - **Backend / APIs:** FastAPI, Flask, Django, Ruby on Rails, Node.js; REST, gRPC, GraphQL, WebSocket JSON-RPC
 - **Frontend:** React, Next.js, Vite, Tailwind CSS, Zustand
 - **Data / Messaging:** Kafka, AWS RDS, SQLite (FTS5)
