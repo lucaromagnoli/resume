@@ -17,7 +17,7 @@ Senior software engineer with over ten years of experience building backend and 
 
 ## Technical Skills
 
-- **Languages:** Python, Go, TypeScript/JavaScript (primary); C++20/23, Ruby, Java, SQL, Bash
+- **Languages:** Python, Go, TypeScript/JavaScript (primary); C++20/23, Ruby, Lua, Java, SQL, Bash
 - **Backend / APIs:** FastAPI, Flask, Django, Ruby on Rails, Node.js; REST, gRPC, GraphQL, WebSocket JSON-RPC
 - **Frontend:** React, Next.js, Vite, Tailwind CSS, Zustand
 - **Data / Messaging:** Kafka, AWS RDS, SQLite (FTS5)
