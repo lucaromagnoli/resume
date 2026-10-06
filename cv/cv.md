@@ -36,7 +36,8 @@ Senior software engineer with over ten years of experience building backend and 
 
 - Contributing to Agents-at-Scale ARK, an open-source framework for building and running production AI agents.
 - Designing multi-agent orchestration workflows and agent-to-agent (A2A) communication.
-- Building backend services and tooling in Python, Go and TypeScript, plus some React front-end work.
+- Building backend services and tooling in Python, Go and TypeScript.
+- Designed the UI for SDLC, a greenfield project, and contributed React front-end features to ARK.
 - Building agent tooling with the Claude SDK and LLM APIs, including Model Context Protocol (MCP) integrations for tool-using agents.
 - Integrating LLM observability and tracing with Langfuse.
 
