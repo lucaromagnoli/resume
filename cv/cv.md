@@ -12,7 +12,7 @@ Senior Software Engineer -- Distributed Backend Systems, Agentic AI, Polyglot (P
 
 ## Summary
 
-Senior software engineer with over ten years of experience building backend and distributed systems. Works mainly in Python, Go and TypeScript, with production experience in Ruby and JavaScript and substantial C++ in open-source work. Has carried out several system migrations: a high-throughput Rails service to Go at Deliveroo, a monolith to microservices at Sainsbury's, and legacy services to event-driven AWS Lambda at Siemens. Has also built Kafka-based asynchronous pipelines. Currently builds production AI-agent infrastructure (multi-agent orchestration, A2A, MCP) at NearForm. Creator of MAGDA, an open-source, cross-platform digital audio workstation (DAW) with built-in AI agents. It spans a C++ desktop application and audio engine, a React/Next.js web front end, and AWS infrastructure managed with Terraform.
+Senior software engineer with over ten years of experience building backend and distributed systems. Works mainly in Python, Go and TypeScript, with production experience in Ruby, JavaScript and React and substantial C++ in open-source work. Has carried out several system migrations: a high-throughput Rails service to Go at Deliveroo, a monolith to microservices at Sainsbury's, and legacy services to event-driven AWS Lambda at Siemens. Has also built Kafka-based asynchronous pipelines. Currently builds production AI-agent infrastructure (multi-agent orchestration, A2A, MCP) at NearForm. Creator of MAGDA, an open-source, cross-platform digital audio workstation (DAW) with built-in AI agents. It spans a C++ desktop application and audio engine, a React/Next.js web front end, and AWS infrastructure managed with Terraform.
 
 ## Technical Skills
 
@@ -36,7 +36,7 @@ Senior software engineer with over ten years of experience building backend and 
 
 - Contributing to Agents-at-Scale ARK, an open-source framework for building and running production AI agents.
 - Designing multi-agent orchestration workflows and agent-to-agent (A2A) communication.
-- Building backend services and tooling in Python, Go and TypeScript.
+- Building backend services and tooling in Python, Go and TypeScript, plus some React front-end work.
 - Building agent tooling with the Claude SDK and LLM APIs, including Model Context Protocol (MCP) integrations for tool-using agents.
 - Integrating LLM observability and tracing with Langfuse.
 
@@ -73,7 +73,7 @@ March 2023 -- September 2023
 **Senior Software Engineer (Contract)**
 November 2022 -- February 2023
 
-- Developed a Django backend integrated with Keycloak authentication.
+- Developed a Django backend integrated with Keycloak authentication, and contributed React front-end features.
 - Built Docker images and deployed services to AWS ECS.
 
 ### Wayfair
@@ -81,7 +81,7 @@ November 2022 -- February 2023
 **Senior Software Engineer (Contract)**
 March 2022 -- October 2022
 
-- Developed internal logistics and order-management tools.
+- Developed internal logistics and order-management tools, including React front-end work.
 - Implemented asynchronous processing pipelines with Kafka.
 
 ### Just Eat
