@@ -1,6 +1,6 @@
 # Luca Romagnoli
 
-Senior Software Engineer -- Distributed Backend Systems, Agentic AI, Polyglot (Python · Go · TypeScript · C++)
+Senior Software Engineer -- Shipping AI Agents to Production · Evals & Observability · Distributed Backend Systems (Python · Go · TypeScript · C++)
 
 ## Contact
 
@@ -13,7 +13,7 @@ Senior Software Engineer -- Distributed Backend Systems, Agentic AI, Polyglot (P
 
 ## Summary
 
-Senior software engineer with over ten years of experience building backend and distributed systems. Works mainly in Python, Go and TypeScript/JavaScript (including React), with production experience in Ruby and substantial C++ in open-source work. Has carried out several system migrations: a high-throughput Rails service to Go at Deliveroo, a monolith to microservices at Sainsbury's, and legacy services to event-driven AWS Lambda at Siemens. Has also built Kafka-based asynchronous pipelines. Currently builds production AI-agent infrastructure (multi-agent orchestration, A2A, MCP) at NearForm. Creator of MAGDA, an open-source, cross-platform digital audio workstation (DAW) with built-in AI agents. It spans a C++ desktop application and audio engine, a React/Next.js web front end, and AWS infrastructure managed with Terraform.
+Senior software engineer who ships AI agents to production, with over ten years of experience building backend and distributed systems. At NearForm, builds production AI-agent features and infrastructure (multi-agent orchestration, A2A, MCP) and the evaluation and observability that make them safe to release: golden-dataset regression suites in CI, tool-call and trajectory evals, online evals on production traces, and OpenTelemetry/Langfuse tracing with cost and latency dashboards. Works mainly in Python, Go and TypeScript/JavaScript (including React), with production experience in Ruby and substantial C++ in open-source work. Has carried out several system migrations: a high-throughput Rails service to Go at Deliveroo, a monolith to microservices at Sainsbury's, and legacy services to event-driven AWS Lambda at Siemens. Has also built Kafka-based asynchronous pipelines. Creator of MAGDA, an open-source, cross-platform digital audio workstation (DAW) with built-in AI agents. It spans a C++ desktop application and audio engine, a React/Next.js web front end, and AWS infrastructure managed with Terraform.
 
 ## Technical Skills
 
@@ -23,8 +23,9 @@ Senior software engineer with over ten years of experience building backend and 
 - **Data / Messaging:** Kafka, AWS RDS, SQLite (FTS5)
 - **Cloud / Infrastructure:** AWS (Lambda, ECS, EventBridge, RDS, S3, CloudFront), Terraform, Docker, Kubernetes, Helm, GitHub Actions
 - **Native / Desktop:** C++ with JUCE, CMake, WebAssembly (Emscripten), Catch2; macOS, Windows and Linux builds
-- **Observability:** Langfuse, DataDog, Sentry
 - **AI / Agentic Systems:** Multi-agent orchestration, tool-using agents, A2A, MCP servers and integrations, RAG pipelines, Claude SDK, OpenAI, Anthropic, Gemini, Hugging Face, local inference with llama.cpp
+- **AI Evaluation:** Golden datasets and regression suites gated in CI, tool-call and trajectory evals, online evals on production traces, turning production failures into new test cases
+- **Observability:** OpenTelemetry, Langfuse (tracing, prompt management), DataDog, Sentry; distributed tracing across agents and tool calls, token/cost/latency dashboards, prompt versioning
 - **LLM Infrastructure:** Prompt orchestration, structured output (JSON Schema, Pydantic), context-window optimisation, token and cost tracking
 - **Practices:** Distributed and event-driven systems, async programming, API design, system migrations, TDD, integration testing, CI/CD
 
@@ -35,12 +36,16 @@ Senior software engineer with over ten years of experience building backend and 
 **Senior Software Engineer**
 2025 -- Present
 
-- Contributing to Agents-at-Scale ARK, an open-source framework for building and running production AI agents.
+- Shipping AI-agent features to production on Agents-at-Scale ARK, an open-source framework for building and running production AI agents.
 - Designing multi-agent orchestration workflows and agent-to-agent (A2A) communication.
+- Building agent tooling with the Claude SDK and LLM APIs, including Model Context Protocol (MCP) integrations for tool-using agents.
+- **Evals:** Built golden-dataset regression suites that run in CI, so prompt, model and tool changes are checked against known-good behaviour before release.
+- **Evals:** Added tool-call and trajectory evals that check whether agents choose the right tools, arguments and steps, not only whether the final answer is right.
+- **Evals:** Run online evals on production Langfuse traces and turn failing cases into new regression tests.
+- **Observability:** Instrumented agents and services with OpenTelemetry and Langfuse, producing end-to-end traces across multi-agent hand-offs, LLM calls and tool calls.
+- **Observability:** Built token, cost and latency dashboards per agent and model, and introduced prompt versioning linked to traces, so behaviour changes can be traced to a specific prompt release.
 - Building backend services and tooling in Python, Go and TypeScript.
 - Designed the React UI for SDLC, a greenfield project, and contributed React front-end features to ARK.
-- Building agent tooling with the Claude SDK and LLM APIs, including Model Context Protocol (MCP) integrations for tool-using agents.
-- Integrating LLM observability and tracing with Langfuse.
 
 ### Deliveroo
 
