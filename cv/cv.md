@@ -17,7 +17,7 @@ Senior software engineer with over ten years of experience in backend and distri
 
 ## Technical Skills
 
-- **Languages:** Python, Go, C++20/23 (primary); TypeScript/JavaScript, Ruby, Lua, Java, SQL, Bash
+- **Languages:** Python, Go, TypeScript/JavaScript (primary); C++20/23 (open-source work), Ruby, Lua, Java, SQL, Bash
 - **AI Infrastructure:** Multi-agent orchestration, A2A, MCP servers, OpenAI Responses API, Claude SDK, provider-agnostic LLM integration (OpenAI, Anthropic, Gemini, llama.cpp), structured output, evals, OpenTelemetry and Langfuse tracing
 - **Distributed Systems:** Event-driven and microservice architectures, Kafka, system migrations; FastAPI, Django, Ruby on Rails; REST, gRPC, GraphQL
 - **Cloud / Infrastructure:** Kubernetes, Helm, AWS (Lambda, ECS, EventBridge, RDS, S3, CloudFront), Terraform, Docker, GitHub Actions, DataDog, Sentry
