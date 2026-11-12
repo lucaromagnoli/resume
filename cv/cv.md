@@ -13,7 +13,7 @@ Senior Software Engineer -- Shipping AI Agents to Production · Evals & Observab
 
 ## Summary
 
-Senior software engineer who ships AI agents to production, with over ten years of experience building backend and distributed systems. At NearForm, builds production AI-agent features and infrastructure (multi-agent orchestration, A2A, MCP) and the evaluation and observability that make them safe to release: golden-dataset regression suites in CI, tool-call and trajectory evals, online evals on production traces, and OpenTelemetry/Langfuse tracing with cost and latency dashboards. Works mainly in Python, Go and TypeScript/JavaScript (including React), with production experience in Ruby and substantial C++ in open-source work. Has carried out several system migrations: a high-throughput Rails service to Go at Deliveroo, a monolith to microservices at Sainsbury's, and legacy services to event-driven AWS Lambda at Siemens. Has also built Kafka-based asynchronous pipelines. Creator of MAGDA, an open-source, cross-platform digital audio workstation (DAW) with built-in AI agents. It spans a C++ desktop application and audio engine, a React/Next.js web front end, and AWS infrastructure managed with Terraform.
+Senior software engineer who ships AI agents to production, with over ten years of experience building backend and distributed systems. At NearForm, builds production AI-agent features and infrastructure on Kubernetes (multi-agent orchestration, A2A, MCP) and the evaluation and observability that make them safe to release: golden-dataset regression suites in CI, tool-call and trajectory evals, online evals on production traces, and OpenTelemetry/Langfuse tracing with cost and latency dashboards. Works mainly in Python, Go and TypeScript/JavaScript (including React), with production experience in Ruby and substantial C++ in open-source work. Has carried out several system migrations: a high-throughput Rails service to Go at Deliveroo, a monolith to microservices at Sainsbury's, and legacy services to event-driven AWS Lambda at Siemens. Has also built Kafka-based asynchronous pipelines and deployed services on Kubernetes at NearForm, Sainsbury's and Wayfair. Creator of MAGDA, an open-source, cross-platform digital audio workstation (DAW) with built-in AI agents. It spans a C++ desktop application and audio engine, a React/Next.js web front end, and AWS infrastructure managed with Terraform.
 
 ## Technical Skills
 
@@ -37,6 +37,8 @@ Senior software engineer who ships AI agents to production, with over ten years 
 2025 -- Present
 
 - Shipping AI-agent features to production on Agents-at-Scale ARK, an open-source framework for building and running production AI agents.
+- **Kubernetes:** Built and deployed services on Kubernetes across all NearForm projects, including ARK, where agents, models and tools are declared as Kubernetes custom resources, and SDLC, a greenfield agentic project that automates the software development lifecycle (SDLC). Packaged deployments with Helm.
+- **Kubernetes:** Set up the Kubernetes cluster for SDLC.
 - Designing multi-agent orchestration workflows and agent-to-agent (A2A) communication.
 - Building agent tooling with the Claude SDK and LLM APIs, including Model Context Protocol (MCP) integrations for tool-using agents.
 - **Evals:** Built golden-dataset regression suites that run in CI, so prompt, model and tool changes are checked against known-good behaviour before release.
@@ -45,7 +47,7 @@ Senior software engineer who ships AI agents to production, with over ten years 
 - **Observability:** Instrumented agents and services with OpenTelemetry and Langfuse, producing end-to-end traces across multi-agent hand-offs, LLM calls and tool calls.
 - **Observability:** Built token, cost and latency dashboards per agent and model, and introduced prompt versioning linked to traces, so behaviour changes can be traced to a specific prompt release.
 - Building backend services and tooling in Python, Go and TypeScript.
-- Designed the React UI for SDLC, a greenfield project, and contributed React front-end features to ARK.
+- Designed the React UI for SDLC and contributed React front-end features to ARK.
 
 ### Deliveroo
 
@@ -90,6 +92,7 @@ March 2022 -- October 2022
 
 - Developed internal logistics and order-management tools, including React front-end work.
 - Implemented asynchronous processing pipelines with Kafka.
+- Deployed services to Kubernetes.
 
 ### Just Eat
 
@@ -106,6 +109,7 @@ January 2020 -- August 2021
 
 - Led the migration from monolithic systems to microservices.
 - Built ETL pipelines with Kafka and asynchronous Python services.
+- Containerised the new microservices with Docker and deployed them on Kubernetes.
 
 ### Mavens of London
 
