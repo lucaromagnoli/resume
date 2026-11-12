@@ -58,7 +58,7 @@ A greenfield agentic project that automates the software development lifecycle.
 ### Deliveroo
 
 **Senior Software Engineer**
-November 2024 -- 2025
+November 2024 -- October 2025
 
 - Led the migration of a high-throughput backend service from Ruby on Rails to Go.
 - Built automation systems using LLM workflows to improve developer productivity.
