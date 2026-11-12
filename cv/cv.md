@@ -29,7 +29,7 @@ Senior software engineer with over ten years of experience in backend and distri
 ### NearForm
 
 **Senior Software Engineer**
-October 2025 -- Present
+November 2025 -- Present
 
 #### ARK (Agents-at-Scale)
 
