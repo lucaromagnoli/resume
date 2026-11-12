@@ -36,8 +36,9 @@ October 2025 -- Present
 An open-source, Kubernetes-native framework for running AI agents, where agents, models and tools are declared as Kubernetes custom resources.
 
 - Built the OpenAI Responses API executor, which runs ARK agents on the Responses API. A client used it in a pilot project.
-- Built the File API integration.
-- Built an MCP server with the Claude SDK.
+- Integrated the OpenAI Files API with the executor, so users can upload files that agents then reference as input.
+- Built an MCP server with the Claude SDK that loads files in isolation, as part of the file-handling architecture.
+- Worked with ARK's OpenTelemetry and Langfuse tracing across agent hand-offs, LLM calls and tool calls.
 - Designing multi-agent orchestration workflows and agent-to-agent (A2A) communication.
 - Contributed React front-end features.
 
@@ -46,13 +47,12 @@ An open-source, Kubernetes-native framework for running AI agents, where agents,
 A greenfield agentic project that automates the software development lifecycle.
 
 - Set up the Kubernetes cluster and the infrastructure the project runs on.
-- Designed the application architecture.
-- Designed and built the React UI.
+- Made the key design decisions for the application architecture, the agent workflow and the UI.
+- Built the React UI.
 
 #### Across projects
 
 - Built evals that gate agent releases: golden-dataset regression suites in CI, tool-call and trajectory checks, and online evals on production traces, with failing cases turned into new tests.
-- Instrumented agents and services with OpenTelemetry and Langfuse for end-to-end tracing across agent hand-offs, LLM calls and tool calls, with token, cost and latency dashboards and prompt versioning.
 - Deploying services to Kubernetes with Helm, and building backend services and tooling in Python, Go and TypeScript.
 
 ### Deliveroo
