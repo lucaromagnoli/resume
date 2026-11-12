@@ -36,17 +36,12 @@ Senior software engineer who ships AI agents to production, with over ten years 
 **Senior Software Engineer**
 2025 -- Present
 
-- Shipping AI-agent features to production on Agents-at-Scale ARK, an open-source framework for building and running production AI agents.
-- Set up the Kubernetes cluster for SDLC, a greenfield agentic software development lifecycle project, and deploy services to Kubernetes with Helm across NearForm projects, including ARK.
-- Designing multi-agent orchestration workflows and agent-to-agent (A2A) communication.
-- Building agent tooling with the Claude SDK and LLM APIs, including Model Context Protocol (MCP) integrations for tool-using agents.
-- **Evals:** Built golden-dataset regression suites that run in CI, so prompt, model and tool changes are checked against known-good behaviour before release.
-- **Evals:** Added tool-call and trajectory evals that check whether agents choose the right tools, arguments and steps, not only whether the final answer is right.
-- **Evals:** Run online evals on production Langfuse traces and turn failing cases into new regression tests.
-- **Observability:** Instrumented agents and services with OpenTelemetry and Langfuse, producing end-to-end traces across multi-agent hand-offs, LLM calls and tool calls.
-- **Observability:** Built token, cost and latency dashboards per agent and model, and introduced prompt versioning linked to traces, so behaviour changes can be traced to a specific prompt release.
-- Building backend services and tooling in Python, Go and TypeScript.
-- Designed the React UI for SDLC and contributed React front-end features to ARK.
+- Shipping AI-agent features to production on Agents-at-Scale ARK, an open-source, Kubernetes-native framework for building and running AI agents, and contributing React front-end features.
+- Designing multi-agent orchestration workflows and agent-to-agent (A2A) communication, and building agent tooling with the Claude SDK, LLM APIs and Model Context Protocol (MCP) integrations.
+- Built evals that gate agent releases: golden-dataset regression suites in CI, tool-call and trajectory checks, and online evals on production traces, with failing cases turned into new tests.
+- Instrumented agents and services with OpenTelemetry and Langfuse for end-to-end tracing across agent hand-offs, LLM calls and tool calls, with token, cost and latency dashboards and prompt versioning.
+- Set up the Kubernetes cluster for SDLC, a greenfield agentic software development lifecycle project, and designed its React UI.
+- Deploying services to Kubernetes with Helm across NearForm projects, and building backend services and tooling in Python, Go and TypeScript.
 
 ### Deliveroo
 
